@@ -1,0 +1,5 @@
+{
+    "app_name":"mex",
+    "server_port": 9093,
+    "request_limit" : "200mb"
+}

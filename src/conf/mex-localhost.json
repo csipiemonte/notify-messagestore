@@ -1,0 +1,42 @@
+{
+  "db": {
+    "host": "localhost",
+    "user": "unpmex",
+    "password": "mypass",
+    "database": "NOTIFICATOREDB",
+    "max": 20,
+    "idleTimeoutMillis": 30000,
+    "connectionTimeoutMillis": 5000,
+    "schema": "unpmex"
+  },
+  "mb": {
+    "queues": {
+      "events": "http://localhost:8080/api/v1/topics/events",
+      "audit": "http://localhost:8080/api/v1/topics/audit"
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZjdhMmE5ODMtZDgzMi00YmQzLThlMzYtOWFkODM2ZGIwNTU3IiwicHJlZmVyZW5jZV9zZXJ2aWNlX25hbWUiOiJtZXgiLCJleHAiOjI1MzQwMjIxMDgwMCwiaWF0IjoxNTE5ODIyNzA0LCJhcHBsaWNhdGlvbnMiOnsibWIiOlsiZW5xdWV1ZSIsImRlcXVldWUiXSwibWV4IjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl0sInByZWZlcmVuY2VzIjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl19fQ.fYa4M2Ti3qj1Sbw1UAZ4BIwCWspig1MsCOQCvslpxMo"
+  },
+  "security": {
+    "secret": "dev",
+    "passphrase": "dev",
+    "blacklist":{
+      "url":"http://localhost:8080/api/v1/keys/blacklist"
+    }
+  },
+  "log4js": {
+    "appenders": {
+      "fileAppender": {
+        "filename": "../../logs/mex.log"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "consoleAppender",
+          "fileAppender"
+        ],
+        "level": "debug"
+      }
+    }
+  }
+}

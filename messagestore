@@ -1,0 +1,2 @@
+cd /appserv/unp/notify/messagestore/src
+node messagestore.js >/dev/null 2>&1 &
