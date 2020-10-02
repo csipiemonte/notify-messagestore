@@ -131,7 +131,7 @@ function toMessage(m) {
     try{
         var mex_io = JSON.parse(decrypt(m.io));
     }catch(e){
-        logger.error("m.io is not a valid JSON: ", m.io, e);
+        logger.error("m.io is not a valid JSON: ", m.io, e.message);
         throw e;
     }
     var x = {
@@ -172,7 +172,7 @@ function toMessage(m) {
             let payload = JSON.parse(client_token);
             x.sender = payload.preference_service_name;
         } catch (err) {
-            logger.error("client_token is not a valid JSON: ", client_token, err);
+            logger.error("client_token is not a valid JSON: ", client_token, err.message);
             throw err;
         }
     }
@@ -220,7 +220,7 @@ app.get(prefix + ':user_id/messages/:mex_id', async function (req, res, next) {
     try {
         return next({type: "ok", status: 200, message: toMessage(message)});
     } catch (err) {
-        logger.error("System error: ", err);
+        logger.error("system error: ", err.message);
         return next({type: "system_error", status: 500, message: err});
     }
 });
@@ -300,7 +300,7 @@ app.get(prefix + ':user_id/messages', async function (req, res, next) {
         var sqlCount = buildQuery.select().table('messages').filter(filter).count().sql;
         var sql_total = buildQuery.select().table('messages').filter(filter).sort(sort).page(limit, offset).sql;
     } catch (err) {
-        logger.error(err);
+        logger.error(JSON.stringify(err));
         return next({type: "client_error", status: 400, message: err});
     }
             
@@ -365,7 +365,7 @@ app.get(prefix + ':user_id/messages', async function (req, res, next) {
             })
         });
     } catch (err) {
-        logger.error("System error: ", err);
+        logger.error("system error: ", err.message);
         return next({type: "system_error", status: 500, message: err});
     }
 
@@ -492,7 +492,7 @@ app.put(prefix + ':user_id/messages/status', async function (req, res, next) {
         })
         return next({type: "ok", status: 200, message: messages});
     } catch (err) {
-        logger.error("System error: ", err);
+        logger.error("system error: ", err.message);
         return next({type: "system_error", status: 500, message: err});
     }
 });
@@ -534,7 +534,7 @@ app.put(prefix + ':user_id/messages/:mex_id', async function (req, res, next) {
         message.user_id = req.params.user_id;
         return next({type: "ok", status: 200, message: message});
     } catch (err) {
-        logger.error("System error: ", err);
+        logger.error("system error: ", err.message);
         return next({type: "system_error", status: 500, message: err});
     }
 });
