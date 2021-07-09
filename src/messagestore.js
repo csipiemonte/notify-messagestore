@@ -50,7 +50,7 @@ if(process.env.APPDYNAMICS_HOSTS && process.env.APPDYNAMICS_HOSTS.indexOf(hostna
         controllerPort: 443,
         controllerSslEnabled: true,
         accountName: 'csi-net',
-        accountAccessKey: '00dfb3669f59',
+        accountAccessKey: 'accountAccessKey',
         applicationName: 'NOTIFY_' + env_dynamics[process.env.ENVIRONMENT] + '_CSI-01',
         tierName: 'notify-' + conf.app_name,
         nodeName: 'notify-'+ conf.app_name + '-' + hostname,
