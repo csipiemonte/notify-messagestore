@@ -34,34 +34,6 @@ const decrypt = function(text){
     }
 };
 
-var hostname = require('os').hostname();
-console.log("instrumentazione per appdynamics: ", process.env.APPDYNAMICS_HOSTS, hostname)
-logger.info("instrumentazione per appdynamics: ", process.env.APPDYNAMICS_HOSTS, hostname)
-
-var env_dynamics = {
-    "dev" : "DEV",
-    "tst" : "TEST",
-    "prod": "PROD"
-}
-
-if(process.env.APPDYNAMICS_HOSTS && process.env.APPDYNAMICS_HOSTS.indexOf(hostname) !== -1){
-    require("appdynamics").profile({
-        controllerHostName: 'csi-net.saas.appdynamics.com',
-        controllerPort: 443,
-        controllerSslEnabled: true,
-        accountName: 'csi-net',
-        accountAccessKey: 'accountAccessKey',
-        applicationName: 'NOTIFY_' + env_dynamics[process.env.ENVIRONMENT] + '_CSI-01',
-        tierName: 'notify-' + conf.app_name,
-        nodeName: 'notify-'+ conf.app_name + '-' + hostname,
-        proxyHost: conf.appdynamics.proxyHost,
-        proxyPort: conf.appdynamics.proxyPort
-    })
-
-
-}
-
-
 var app = express();
 
 app.use(bodyParser.json({limit: conf.request_limit}));
@@ -70,18 +42,8 @@ app.use(function(req,res,next){
     next();
 });
 
-
-
-
 var prefix = "/api/v1/users/";
 
-
-// trace request as event
-/*const eh = obj.event_handler();
-if (eh) app.use((req, res, next) => {
-    eh.client_request(req);
-    next();
-});*/
 
 if (conf.security) {
     if(conf.security.blacklist) obj.blacklist(app);
@@ -312,26 +274,6 @@ app.get(prefix + ':user_id/messages', async function (req, res, next) {
         var result = await db.execute(sql_total);
         let t1 = new Date().getTime();
         logger.debug("QUERY EXECUTION TIME: ",(t1-t0)/1000 + "s");
-                        
-        /*if(filter_tag && filter_tag.match) result_total = result_total.filter(e => e.tag).filter( e => {
-            let reduced = filter_words.reduce( ((total,fw,index,arr) => {                                    
-                if(index === 0 && fw.startsWith("-")) {                    
-                    return "!" + e.tag.includes(fw.replace("-"));
-                }                
-                total+= e.tag.includes(fw.replace('+','').replace('-',''));
-                if(arr.length > index +1){                    
-                    switch(arr[index+1].charAt(0)){
-                        case "+": total +=  " && ";break;
-                        case "-": total = "(" + total + ") && !";break;
-                        default: total += " || ";break;
-                    }
-                                        
-                }
-                return total;
-            }),"")
-            
-            return eval(reduced);
-        });*/
 
         if (!result || result.length === 0) return next({type: "ok", status: 200, message: []});
     } catch (err) {

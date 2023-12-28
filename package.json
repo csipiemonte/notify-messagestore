@@ -2,7 +2,7 @@
   "name": "mex",
   "version": "1.0.0",
   "description": "",
-  "main": "mex.js",
+  "main": "messagestore.js",
   "directories": {
     "doc": "docs"
   },
