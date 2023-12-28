@@ -58,7 +58,7 @@ La sicurezza è gestita tramite token JWT, il token contiene, oltre ai parametri
 * `applications`: contiene le appicazioni della suite Notify con i relativi permessi assegnati.
 * `preferences`: contiene le configurazioni delle eventuali canalità abilitate per il servizio (come ad esempio l'indirizzo email con cui inviare le notifiche email, il token push con cui inviare le notifiche push, ecc...).
 
-La passphrase usata verificare la correttezza della firma del token è contenuta nella variabile d'ambiente `PREFERENCES_SECURITY_SECRET` oppure nel file di configurazione.
+La passphrase usata verificare la correttezza della firma del token è contenuta nella variabile d'ambiente `MEX_SECURITY_SECRET` oppure nel file di configurazione.
 Il token JWT viene letto nell'header `x-authentication`.
 
 # Running
