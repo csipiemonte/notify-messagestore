@@ -38,6 +38,7 @@ I principali attributi presenti nei file di configurazione sono elencati di segu
     * `password`: password dell'utente del db
     * `schema`: database schema
 * `app_name` : nome dell'applicazione (obbligatorio per tracciatura degli eventi e check sicurezza)
+* `request_limit`: dimensione massima del payload in ingresso
 * `mb`: contiene la configurazione per il Message Broker.
     * `queues`: contiene le informazioni per le code del message broker
         * `events`: url della coda su cui scrivere gli eventi
@@ -45,6 +46,7 @@ I principali attributi presenti nei file di configurazione sono elencati di segu
     * `token`: il token auth per chiamare il message broker
 * `server_port`: porta che utilizzerà l'istanza del server
 * `log4js`: la configurazione di log4js (vedi https://www.npmjs.com/package/log4js)
+* `defaulttenant`: tenant di default
 * `security`: contiene la configurazione della sicurezza
     * `secret`: password per verificare firma del token auth utilizzato per chiamare la comopnente
     * `passphrase`: password per decifrare dati del db
