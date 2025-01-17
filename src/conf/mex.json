@@ -4,5 +4,6 @@
     "request_limit" : "200mb",
     "log4js": {
         "pm2": true
-    }
+    },
+    "defaulttenant": "r_piemon"
 }

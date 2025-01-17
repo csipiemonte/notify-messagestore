@@ -2,7 +2,7 @@
   "name": "mex",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "mex.js",
   "directories": {
     "doc": "docs"
   },
@@ -14,13 +14,17 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "escape-html": "^1.0.3",
     "express": "^4.16.2",
-    "express-jwt": "^5.3.0",
+    "express-jwt": "^5.3.3",
+    "heapdump": "^0.3.15",
     "ip": "^1.1.5",
+    "joi": "^17.12.1",
     "jsonwebtoken": "^8.2.0",
-    "log4js": "^2.5.3",
-    "mysql": "^2.15.0",
+    "log4js": "^6.3.0",
     "os": "^0.1.1",
-    "request": "^2.83.0"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "uuid": "^8.3.2"
   }
 }
