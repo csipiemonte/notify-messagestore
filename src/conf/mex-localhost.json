@@ -15,11 +15,11 @@
       "events": "http://localhost:8080/api/v1/topics/events",
       "audit": "http://localhost:8080/api/v1/topics/audit"
     },
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZjdhMmE5ODMtZDgzMi00YmQzLThlMzYtOWFkODM2ZGIwNTU3IiwicHJlZmVyZW5jZV9zZXJ2aWNlX25hbWUiOiJtZXgiLCJleHAiOjI1MzQwMjIxMDgwMCwiaWF0IjoxNTE5ODIyNzA0LCJhcHBsaWNhdGlvbnMiOnsibWIiOlsiZW5xdWV1ZSIsImRlcXVldWUiXSwibWV4IjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl0sInByZWZlcmVuY2VzIjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl19fQ.fYa4M2Ti3qj1Sbw1UAZ4BIwCWspig1MsCOQCvslpxMo"
+    "token": "YF6E7N5muTBWYRkQaLjSIBgQFtCxKObkWnbW0xVd2EW1U9+pKiUi5zyM6lrrKpOFc+EBz2XNrF0q+ckMENlF7eGzkWccBviccom6KZSwvODmWAtYfBkOi9NhBWnl4eF6nmaSo8niatwUfOPX2v59gtq9vu8yvafG4MUJmqscHeiFCkATQjNF2gF3rZ89fHZFsG0eVTdSe4gRXD1C7XZdAm83sZPiPkUYooBy/cpaPoimd8U/rjJh0W8Eqd9KdebLA55pjQHKz3DsDJe68aWGo1eyFZAGwuh15GBRVZmOWwFD3TR5vT/OyMCUMGfrGRYS2xwoRnY9muKpiFb0ORnNhIXz5+yQtwQAKtoTMyG1aifGc752IOSekVrduwLkQXuyJxGEP77nBUiIAlpN5MB4LtpMnbPcIcI9cQ5hPMJVNE2vu3iZINHtlZUlDdieDHk+oVX6s9v2Nq6w98XZuCNeRWsjCf9AHTqQhp9fAgSq2x97UiyNVzgTAh/H7KcTbua+RTtobc2cJCcgzbXYJZpl4w=="
   },
   "preferences": {
     "url": "http://localhost:9092/api/v2",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiZjdhMmE5ODMtZDgzMi00YmQzLThlMzYtOWFkODM2ZGIwNTU3IiwicHJlZmVyZW5jZV9zZXJ2aWNlX25hbWUiOiJtZXgiLCJleHAiOjI1MzQwMjIxMDgwMCwiaWF0IjoxNTE5ODIyNzA0LCJhcHBsaWNhdGlvbnMiOnsibWIiOlsiZW5xdWV1ZSIsImRlcXVldWUiXSwibWV4IjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl0sInByZWZlcmVuY2VzIjpbInJlYWQiLCJ3cml0ZSIsImFkbWluIl19fQ.fYa4M2Ti3qj1Sbw1UAZ4BIwCWspig1MsCOQCvslpxMo",
+    "token": "YF6E7N5muTBWYRkQaLjSIBgQFtCxKObkWnbW0xVd2EW1U9+pKiUi5zyM6lrrKpOFc+EBz2XNrF0q+ckMENlF7eGzkWccBviccom6KZSwvODmWAtYfBkOi9NhBWnl4eF6nmaSo8niatwUfOPX2v59gtq9vu8yvafG4MUJmqscHeiFCkATQjNF2gF3rZ89fHZFsG0eVTdSe4gRXD1C7XZdAm83sZPiPkUYooBy/cpaPoimd8U/rjJh0W8Eqd9KdebLA55pjQHKz3DsDJe68aWGo1eyFZAGwuh15GBRVZmOWwFD3TR5vT/OyMCUMGfrGRYS2xwoRnY9muKpiFb0ORnNhIXz5+yQtwQAKtoTMyG1aifGc752IOSekVrduwLkQXuyJxGEP77nBUiIAlpN5MB4LtpMnbPcIcI9cQ5hPMJVNE2vu3iZINHtlZUlDdieDHk+oVX6s9v2Nq6w98XZuCNeRWsjCf9AHTqQhp9fAgSq2x97UiyNVzgTAh/H7KcTbua+RTtobc2cJCcgzbXYJZpl4w==",
     "basicauth": {
       "username": "admin",
       "password": "admin"
@@ -27,7 +27,10 @@
   },
   "security": {
     "secret": "dev",
-    "passphrase": "dev",
+    "crypto": {
+      "password": "dev"
+    },
+    "passphrase":"dev",
     "blacklist":{
       "url":"http://localhost:8080/api/v1/keys/blacklist"
     }
